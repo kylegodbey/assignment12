@@ -1,11 +1,11 @@
-sortArray: main.o sortingArray.o
-	gcc -o sortArray main.o sortingArray.o
-	
-main.o: main.cpp
-	gcc -c -g main.cpp
+sortArray: main.o sortingArray.h
+	g++ -o sortArray main.o sortingArray.h
 
-sortingArray.o: sortingArray.cpp
-	gcc -c -g sortingArray.cpp
-	
+main.o: main.cpp
+	g++ -c -g main.cpp
+
+#sortingArray.o: sortingArray.h
+#	g++ -c -g sortingArray.h
+
 clean: 
-	rm -f *~ *.o sortArray
+	rm -f *.gch *~ *.o sortArray
